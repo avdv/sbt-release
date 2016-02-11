@@ -14,7 +14,7 @@ publishM2 := {
 }
 
 sbtPlugin := true
-publishMavenStyle := false
+publishMavenStyle := true
 scalacOptions += "-deprecation"
 
 libraryDependencies ++= Seq("org.specs2" %% "specs2-core" % "3.6" % "test")
