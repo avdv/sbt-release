@@ -6,6 +6,13 @@ name := "sbt-release"
 homepage := Some(url("https://github.com/sbt/sbt-release"))
 licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 
+publishM2 := {
+  publishM2.value
+
+  val d = file(sys.env("HOME")) / s".m2/repository/com/github/gseitz/sbt-release_${scalaBinaryVersion.value}_${sbtBinaryVersion.value}"
+  d.renameTo(file(sys.env("HOME")) / ".m2/repository/com/github/gseitz/sbt-release")
+}
+
 sbtPlugin := true
 publishMavenStyle := false
 scalacOptions += "-deprecation"
